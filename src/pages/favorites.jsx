@@ -1,13 +1,13 @@
 
-function Favorite() {
+function Favorites() {
     return(
         <>
         <div className="favorites-empty">
             <h2>No Favorite Movies Yet</h2>
-            <p>Add movies to your favorite.</p>
+            <p>Add movies to your favorites.</p>
         </div>
         </>
     )
 }
 
-export default Favorite
+export default Favorites
