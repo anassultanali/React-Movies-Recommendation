@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../css/Home.css"
 import MovieCard from "../components/MovieCard";
 
 function Home() {
@@ -31,7 +32,7 @@ function Home() {
             id=""
             className="search-input"
           />
-          <button type="submit">Search</button>
+          <button className="search-button" type="submit">Search</button>
         </form>
 
         <div className="movies-grid">
