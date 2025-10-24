@@ -1,13 +1,13 @@
-import "../css/Favorites.css"
+import "../css/Favorites.css";
 function Favorites() {
-    return(
-        <>
-        <div className="favorites-empty">
-            <h2>No Favorite Movies Yet</h2>
-            <p>Add movies to your favorites.</p>
-        </div>
-        </>
-    )
+  return (
+    <>
+      <div className="favorites-empty">
+        <h2>No Favorite Movies Yet</h2>
+        <p>Add movies to your favorites.</p>
+      </div>
+    </>
+  );
 }
 
-export default Favorites
+export default Favorites;

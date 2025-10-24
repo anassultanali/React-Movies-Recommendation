@@ -1,30 +1,29 @@
 import { useState, useEffect } from "react";
-import "../css/Home.css"
+import "../css/Home.css";
 import { searchMovies, getPopularMovies } from "../services/api";
 import MovieCard from "../components/MovieCard";
 
 function Home() {
   const [searchQuery, setSearchQurey] = useState("");
-  const [movies ,setMovies ] = useState([]);
-  const [error , setError] = useState(null);
-  const [loading ,setLoading] = useState(true);
+  const [movies, setMovies] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadPopularMovies = async () => {
       try {
         const popularMovies = await getPopularMovies();
         setMovies(popularMovies);
-      }catch (err) {
+      } catch (err) {
         console.log(err);
-        setError("Faild to load Movies...")
-      }
-      finally {
+        setError("Faild to load Movies...");
+      } finally {
         setLoading(false);
-      };
-    }
+      }
+    };
     loadPopularMovies();
-  }, [])
-  
+  }, []);
+
   const handelSearch = (e) => {
     e.preventDefault();
     alert(searchQuery);
@@ -45,7 +44,9 @@ function Home() {
             id=""
             className="search-input"
           />
-          <button className="search-button" type="submit">Search</button>
+          <button className="search-button" type="submit">
+            Search
+          </button>
         </form>
 
         <div className="movies-grid">
