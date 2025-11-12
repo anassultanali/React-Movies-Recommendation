@@ -1,8 +1,15 @@
+import { useContext } from "react";
 import "../css/MovieCard.css";
 
 function MovieCard({ movie }) {
-  function onFavoriteClicked() {
-    alert("Clicked");
+  const { addToFavorites, removeFromFavorite, isFavorite } = useContext();
+  const favorite = isFavorite(movie.id); 
+
+  function onFavoriteClicked(e) {
+    e.preventDefault()
+
+    if(favorite) removeFromFavorite(movie.id)
+    else addToFavorites(movie)
   }
 
   return (
@@ -14,14 +21,14 @@ function MovieCard({ movie }) {
             alt={movie.title}
           />
           <div className="movie-overlay">
-            <button className="favorite-btn" onClick={onFavoriteClicked}>
+            <button className={`favorite-btn ${favorite ? "activ" : ""} `} onClick={onFavoriteClicked}>
               like
             </button>
           </div>
         </div>
         <div className="movie-info">
           <h3 className="title">{movie.title}</h3>
-          <p>{movie.releaseDate}</p>
+          <p>{movie.releaseDate?.split("-")[0]}</p>
         </div>
       </div>
     </>
