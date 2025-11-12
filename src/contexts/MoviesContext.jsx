@@ -24,7 +24,7 @@ export const MovieProvider = ({ children }) => {
     setFavorite((prev) => prev.filter((movie) => movie.id !== movieId));
   };
   const isFavorite = (movieId) => {
-    favorite.some((movie) => movie.id === movieId);
+    return favorite.some((movie) => movie.id === movieId);
   };
   // -------------------------------------
 
